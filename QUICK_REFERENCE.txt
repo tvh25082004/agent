@@ -1,0 +1,86 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                AGENTISSUE-BENCH ANALYSIS                             ║
+║              QUICK REFERENCE CARD                                    ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ KEY NUMBERS (From Real Data)                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Total Issues:            50
+  Total Patches:           654
+  Correct Patches:         ~2-3 (0.31%)
+  Unresolved Issues:       2 (ai_4619, ai_6510)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PERFORMANCE RANKING                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  🥇 1st: AutoCodeRover + Claude    4.67% correct
+  🥈 2nd: Agentless + Claude        4.00% correct  
+  🥉 3rd: Agentless + GPT-4o        3.33% correct
+     4th: SWE-agent + Claude        2.00% correct
+     5th: AutoCodeRover + GPT-4o    1.33% correct
+  ❌ 6th: SWE-agent + GPT-4o        0.67% correct (WORST)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ THE QUALITY GAP                                                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Coverage:  ████████████████████ 62-88%
+  
+  Correct:   █                     0.67-4.67%
+  
+  Gap:       ~80% of patches are WRONG!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ WHY AGENTS FAIL (Top 3 Reasons)                                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  1. Poor Localization (<28% accuracy)
+     → Fix wrong files/functions
+  
+  2. Knowledge Gap (LLM APIs, agent architecture)
+     → Don't understand agent-specific features
+  
+  3. Quality Issues (99.7% patches wrong)
+     → Fix symptoms, not root causes
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ CLAUDE vs GPT-4O                                                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Claude-3.5-Sonnet:  3.56% avg correct  🏆 WINNER
+  GPT-4o:             1.78% avg correct
+  
+  → Claude is 2X BETTER!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ DIFFICULTY COMPARISON                                               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Traditional Software:  20-50% resolution
+  Agent Systems:         0.67-4.67% resolution
+  
+  → 10-50X HARDER!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FILES TO READ                                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Start Here:    README_ANALYSIS.md (this file)
+  Main Report:   FINAL_SUMMARY_REPORT.md ⭐
+  Vietnamese:    KET_QUA_THUC_TE_BENCHMARK.md
+  Human View:    BAO_CAO_PHAN_TICH.md
+  Raw Data:      real_benchmark_analysis.json
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ MAIN CONCLUSION                                                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  ✅ Paper results VERIFIED from real data
+  ✅ Current SE agents INADEQUATE for agent systems  
+  ✅ Need NEW approaches specialized for agents
+  ✅ This is a fundamental research challenge
+

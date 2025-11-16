@@ -1,0 +1,7 @@
+Agent,LLM,Coverage_Rate_%,Issues_With_Patches,Total_Issues,Total_Patches_Generated,Avg_Patches_Per_Issue,Paper_Plausible_%,Paper_Correct_%,Paper_File_Localization_%,Paper_Function_Localization_%
+Agentless,GPT-4o,78.00,39,50,107,2.74,12.00,3.33,27.82,12.99
+Agentless,Claude-3.5-S,82.00,41,50,123,3.00,12.00,4.00,27.35,17.50
+AutoCodeRover,GPT-4o,68.00,34,50,99,2.91,7.33,1.33,22.07,14.77
+AutoCodeRover,Claude-3.5-S,62.00,31,50,81,2.61,12.67,4.67,25.81,19.18
+SWE-agent,GPT-4o,88.00,44,50,130,2.95,0.67,0.67,11.67,4.22
+SWE-agent,Claude-3.5-S,78.00,39,50,114,2.92,2.00,2.00,9.52,6.78

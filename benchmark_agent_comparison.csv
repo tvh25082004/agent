@@ -1,0 +1,4 @@
+Agent,Avg_Coverage_%,Avg_Correct_%,Best_LLM,Best_Correct_%,Total_Patches_Generated,Coverage_Rank,Resolution_Rank
+Agentless,80.00,3.67,Claude,4.00,230,,
+AutoCodeRover,65.00,3.00,Claude,4.67,180,,
+SWE-agent,83.00,1.33,Claude,2.00,244,,
