@@ -1,0 +1,187 @@
+═══════════════════════════════════════════════════════════════════════════════
+                 ✅ AGENTISSUE-BENCH - CHẠY LẠI VỚI KEYS ĐÚNG
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ OpenRouter Key: sk-or-v1-06b800f...
+✓ Models: GPT-4o + Claude-3.5-Sonnet
+✓ Agents: Agentless, AutoCodeRover, SWE-agent
+
+🔧 Đã fix:
+  ✓ agent_issue.json copied
+  ✓ loguru installed
+  ✓ gen_patches_all.sh permissions fixed
+  ✓ Model name: claude-3-5-sonnet-20241022
+
+⏱️  Estimated time: 12-20 giờ
+💰 Estimated cost: ~$95-145
+
+📊 Monitor progress:
+   tail -f benchmark_results/benchmark_run_*.log
+   ./MONITOR_PROGRESS.sh
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+================================================================================
+AGENTISSUE-BENCH - FULL BENCHMARK RUNNER
+Script Tự Động Chạy Toàn Bộ Benchmark từ Đầu
+================================================================================
+
+📋 Thông tin API Keys:
+--------------------------------------------------------------------------------
+✓ OPENAI_API_KEY: sk-or-v1-06b800fb949... (từ environment)
+✓ GOOGLE_API_KEY: AIzaSyAsKoLDpeolRC_e... (từ environment)
+✓ SERPERDEV_API_KEY: bd6f82ef2355257f2c4f...
+✓ OPENAI_API_BASE: https://openrouter.ai/api/v1
+
+📋 Chọn agents để chạy:
+--------------------------------------------------------------------------------
+Lưu ý: Mỗi agent có thể mất vài giờ để chạy 50 issues
+Chạy Agentless? (y/n) [y]: Chạy AutoCodeRover? (y/n) [y]: Chạy SWE-agent? (y/n) [y]: 
+📋 Chọn models:
+--------------------------------------------------------------------------------
+💡 TIP: Dùng OpenRouter để access cả GPT-4o và Claude với 1 key!
+   OpenRouter URL: https://openrouter.ai/api/v1
+
+Sử dụng GPT-4o? (y/n) [y]: Sử dụng Claude-3.5-Sonnet? (y/n) [n]: 
+📋 TỔNG KẾT CẤU HÌNH:
+================================================================================
+Agents: Agentless, AutoCodeRover, SWE-agent
+Models: gpt-4o, claude-3-5-sonnet-20241022
+Total runs: 3 agents × 2 models = 6 runs
+Estimated time: 12-24 hours
+================================================================================
+
+⚠️  Bắt đầu chạy benchmark? (yes/no): ================================================================================
+BENCHMARK RUNNER ĐƯỢC KHỞI TẠO
+================================================================================
+✓ OpenAI API Key: sk-or-v1-06b800fb949...
+✓ Google API Key: AIzaSyAsKoLDpeolRC_e...
+✓ OpenAI Base URL: https://openrouter.ai/api/v1
+✓ SerperDev API Key: bd6f82ef2355257f2c4f...
+✓ Benchmark Directory: /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench
+✓ Output Directory: /Users/tranvanhuy/Desktop/Research/benchmark_results
+✓ Log File: /Users/tranvanhuy/Desktop/Research/benchmark_results/benchmark_run_20251119_025112.log
+✓ Total Issues: 50
+================================================================================
+
+================================================================================
+BẮT ĐẦU CHẠY FULL BENCHMARK
+================================================================================
+Thời gian bắt đầu: 2025-11-19 02:51:12
+Agents được chọn:
+  - Agentless: ✓
+  - AutoCodeRover: ✓
+  - SWE-agent: ✓
+Models: gpt-4o, claude-3-5-sonnet-20241022
+
+================================================================================
+BƯỚC 1: PULL DOCKER IMAGES
+================================================================================
+Pulling 50 Docker images...
+Lưu ý: Quá trình này có thể mất 30-60 phút
+
+>>> Executing: python /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/pull_images.py
+✓ Command succeeded
+✓ Đã pull thành công tất cả Docker images
+
+================================================================================
+BƯỚC 2A: CHẠY AGENTLESS - gpt-4o
+================================================================================
+Installing Agentless dependencies...
+
+>>> Executing: pip install -r requirements.txt
+✓ Command succeeded
+
+Agentless step 1/8
+
+>>> Executing: python agentless/fl/localize.py --file_level --output_folder results-agentissue/swe-bench-lite/file_level --num_threads 1 --skip_existing --backend openai --model gpt-4o --dataset_json agent_issue.json
+✗ Command failed with return code 2
+✗ Agentless step 1 failed
+✗ WARNING: Agentless failed for gpt-4o
+
+================================================================================
+BƯỚC 2B: CHẠY AUTOCODEROVER - gpt-4o
+================================================================================
+
+>>> Executing: python run_autocoderover.py
+✓ Command succeeded
+✓ AutoCodeRover (gpt-4o) completed successfully
+
+================================================================================
+BƯỚC 2C: CHẠY SWE-AGENT - gpt-4o
+================================================================================
+Lưu ý: SWE-agent có thể mất nhiều thời gian (vài giờ)
+Bạn có thể theo dõi tiến trình trong log file
+
+>>> Executing: ./gen_patches_all.sh
+✗ Command failed with return code 126
+✗ SWE-agent (gpt-4o) failed
+✗ WARNING: SWE-agent failed for gpt-4o
+
+================================================================================
+BƯỚC 2A: CHẠY AGENTLESS - claude-3-5-sonnet-20241022
+================================================================================
+Installing Agentless dependencies...
+
+>>> Executing: pip install -r requirements.txt
+✓ Command succeeded
+
+Agentless step 1/8
+
+>>> Executing: python agentless/fl/localize.py --file_level --output_folder results-agentissue/swe-bench-lite/file_level --num_threads 1 --skip_existing --backend anthropic --model claude-3-5-sonnet-20241022 --dataset_json agent_issue.json
+✗ Command failed with return code 1
+✗ Agentless step 1 failed
+✗ WARNING: Agentless failed for claude-3-5-sonnet-20241022
+
+================================================================================
+BƯỚC 2B: CHẠY AUTOCODEROVER - claude-3-5-sonnet-20241022
+================================================================================
+
+>>> Executing: python run_autocoderover.py
+✓ Command succeeded
+✓ AutoCodeRover (claude-3-5-sonnet-20241022) completed successfully
+
+================================================================================
+BƯỚC 2C: CHẠY SWE-AGENT - claude-3-5-sonnet-20241022
+================================================================================
+Lưu ý: SWE-agent có thể mất nhiều thời gian (vài giờ)
+Bạn có thể theo dõi tiến trình trong log file
+
+>>> Executing: ./gen_patches_all.sh
+✗ Command failed with return code 126
+✗ SWE-agent (claude-3-5-sonnet-20241022) failed
+✗ WARNING: SWE-agent failed for claude-3-5-sonnet-20241022
+
+================================================================================
+BƯỚC 3: EVALUATE PATCHES
+================================================================================
+Evaluating all generated patches...
+Lưu ý: Quá trình này có thể mất 1-2 giờ
+
+>>> Executing: python /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/eval_patches.py
+✗ Command failed with return code 1
+✗ Patch evaluation failed
+✗ WARNING: Patch evaluation failed
+
+================================================================================
+BƯỚC 4: PHÂN TÍCH KẾT QUẢ
+================================================================================
+Analyzing benchmark results...
+
+>>> Executing: python /Users/tranvanhuy/Desktop/Research/analyze_real_results.py
+✓ Command succeeded
+✓ Results analysis completed successfully
+✓ CSV files have been generated
+
+================================================================================
+HOÀN THÀNH BENCHMARK
+================================================================================
+Thời gian kết thúc: 2025-11-19 02:56:17
+Tổng thời gian: 0h 5m
+Log file: /Users/tranvanhuy/Desktop/Research/benchmark_results/benchmark_run_20251119_025112.log
+================================================================================
+
+✓ BENCHMARK HOÀN THÀNH THÀNH CÔNG!
+✓ Xem kết quả trong: /Users/tranvanhuy/Desktop/Research/benchmark_results
+✓ Xem log chi tiết: /Users/tranvanhuy/Desktop/Research/benchmark_results/benchmark_run_20251119_025112.log

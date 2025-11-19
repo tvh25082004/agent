@@ -1,0 +1,1471 @@
+[2025-11-19 02:51:12] 
+================================================================================
+[2025-11-19 02:51:12] BẮT ĐẦU CHẠY FULL BENCHMARK
+[2025-11-19 02:51:12] ================================================================================
+[2025-11-19 02:51:12] Thời gian bắt đầu: 2025-11-19 02:51:12
+[2025-11-19 02:51:12] Agents được chọn:
+[2025-11-19 02:51:12]   - Agentless: ✓
+[2025-11-19 02:51:12]   - AutoCodeRover: ✓
+[2025-11-19 02:51:12]   - SWE-agent: ✓
+[2025-11-19 02:51:12] Models: gpt-4o, claude-3-5-sonnet-20241022
+[2025-11-19 02:51:12] 
+================================================================================
+[2025-11-19 02:51:12] BƯỚC 1: PULL DOCKER IMAGES
+[2025-11-19 02:51:12] ================================================================================
+[2025-11-19 02:51:12] Pulling 50 Docker images...
+[2025-11-19 02:51:12] Lưu ý: Quá trình này có thể mất 30-60 phút
+[2025-11-19 02:51:12] 
+>>> Executing: python /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/pull_images.py
+[2025-11-19 02:55:54] STDOUT:
+Pulling image alfin06/agentissue-bench:agixt_1026...
+Failed to pull alfin06/agentissue-bench:agixt_1026: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=agixt_1026&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:crewai_1370...
+Failed to pull alfin06/agentissue-bench:crewai_1370: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=crewai_1370&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:agixt_1030...
+Failed to pull alfin06/agentissue-bench:agixt_1030: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=agixt_1030&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:crewai_1463...
+Failed to pull alfin06/agentissue-bench:crewai_1463: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=crewai_1463&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:agixt_1253...
+Failed to pull alfin06/agentissue-bench:agixt_1253: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=agixt_1253&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:crewai_1532...
+Failed to pull alfin06/agentissue-bench:crewai_1532: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=crewai_1532&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:agixt_1256...
+Failed to pull alfin06/agentissue-bench:agixt_1256: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=agixt_1256&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:crewai_1723...
+Failed to pull alfin06/agentissue-bench:crewai_1723: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=crewai_1723&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:agixt_1369...
+Failed to pull alfin06/agentissue-bench:agixt_1369: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=agixt_1369&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:crewai_1753...
+Failed to pull alfin06/agentissue-bench:crewai_1753: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=crewai_1753&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:agixt_1371...
+Failed to pull alfin06/agentissue-bench:agixt_1371: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=agixt_1371&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:crewai_1824...
+Failed to pull alfin06/agentissue-bench:crewai_1824: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=crewai_1824&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:ai_5628...
+Failed to pull alfin06/agentissue-bench:ai_5628: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=ai_5628&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:crewai_1934...
+Failed to pull alfin06/agentissue-bench:crewai_1934: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=crewai_1934&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:haystack_9523...
+Failed to pull alfin06/agentissue-bench:haystack_9523: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=haystack_9523&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:evoninja_504...
+Failed to pull alfin06/agentissue-bench:evoninja_504: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=evoninja_504&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:ai_4619...
+Failed to pull alfin06/agentissue-bench:ai_4619: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=ai_4619&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:evoninja_515...
+Failed to pull alfin06/agentissue-bench:evoninja_515: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=evoninja_515&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:haystack_8912...
+Failed to pull alfin06/agentissue-bench:haystack_8912: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=haystack_8912&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:evoninja_525...
+Failed to pull alfin06/agentissue-bench:evoninja_525: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=evoninja_525&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:evoninja_594...
+Failed to pull alfin06/agentissue-bench:evoninja_594: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=evoninja_594&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:evoninja_652...
+Failed to pull alfin06/agentissue-bench:evoninja_652: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=evoninja_652&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:autogen_4733...
+Failed to pull alfin06/agentissue-bench:autogen_4733: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:autogen_4733/json: Not Found ("No such image: alfin06/agentissue-bench:autogen_4733")
+Pulling image alfin06/agentissue-bench:autogen_4382...
+Failed to pull alfin06/agentissue-bench:autogen_4382: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=autogen_4382&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:autogen_4785...
+Failed to pull alfin06/agentissue-bench:autogen_4785: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:autogen_4785/json: Not Found ("No such image: alfin06/agentissue-bench:autogen_4785")
+Pulling image alfin06/agentissue-bench:autogen_4197...
+Failed to pull alfin06/agentissue-bench:autogen_4197: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:autogen_4197/json: Not Found ("No such image: alfin06/agentissue-bench:autogen_4197")
+Pulling image alfin06/agentissue-bench:autogen_5007...
+Failed to pull alfin06/agentissue-bench:autogen_5007: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:autogen_5007/json: Not Found ("No such image: alfin06/agentissue-bench:autogen_5007")
+Pulling image alfin06/agentissue-bench:lagent_239...
+Failed to pull alfin06/agentissue-bench:lagent_239: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=lagent_239&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:ai_4411...
+Failed to pull alfin06/agentissue-bench:ai_4411: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=ai_4411&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:lagent_244...
+Failed to pull alfin06/agentissue-bench:lagent_244: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=lagent_244&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:ai_6510...
+Failed to pull alfin06/agentissue-bench:ai_6510: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=ai_6510&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:lagent_279...
+Failed to pull alfin06/agentissue-bench:lagent_279: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=lagent_279&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:camel_1145...
+Failed to pull alfin06/agentissue-bench:camel_1145: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:camel_1145/json: Not Found ("No such image: alfin06/agentissue-bench:camel_1145")
+Pulling image alfin06/agentissue-bench:autogen_3361...
+Failed to pull alfin06/agentissue-bench:autogen_3361: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:autogen_3361/json: Not Found ("No such image: alfin06/agentissue-bench:autogen_3361")
+Pulling image alfin06/agentissue-bench:camel_1273...
+Failed to pull alfin06/agentissue-bench:camel_1273: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:camel_1273/json: Not Found ("No such image: alfin06/agentissue-bench:camel_1273")
+Pulling image alfin06/agentissue-bench:metagpt_1313...
+Failed to pull alfin06/agentissue-bench:metagpt_1313: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:metagpt_1313/json: Not Found ("No such image: alfin06/agentissue-bench:metagpt_1313")
+Pulling image alfin06/agentissue-bench:camel_1614...
+Successfully pulled alfin06/agentissue-bench:camel_1614
+Running container agentissue-bench_camel_1614 and capturing output...
+Usage: docker run [OPTIONS] IMAGE [COMMAND]
+
+Commands:
+  test_buggy      Test if the bug exists in the buggy version
+  test_fixed      Test if the fix works in the fixed version
+  apply_patch     Apply a patch file to the buggy version (requires mounted volume)
+                  Example: docker run -v $(pwd):/patches IMAGE apply_patch /patches/fix.patch
+  test_patched    Test the buggy version with your applied patch
+  show_diff       Show the diff between buggy and fixed versions
+  bash            Start a bash shell
+  help            Show this help message
+
+Pulling image alfin06/agentissue-bench:autogen_1844...
+Failed to pull alfin06/agentissue-bench:autogen_1844: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:autogen_1844/json: Not Found ("No such image: alfin06/agentissue-bench:autogen_1844")
+Pulling image alfin06/agentissue-bench:camel_88...
+Failed to pull alfin06/agentissue-bench:camel_88: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=camel_88&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:autogen_1174...
+Failed to pull alfin06/agentissue-bench:autogen_1174: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=autogen_1174&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:chatdev_318...
+Successfully pulled alfin06/agentissue-bench:chatdev_318
+Running container agentissue-bench_chatdev_318 and capturing output...
+Usage: docker run [OPTIONS] IMAGE [COMMAND]
+
+Commands:
+  test_buggy      Test if the bug exists in the buggy version
+  test_fixed      Test if the fix works in the fixed version
+  apply_patch     Apply a patch file to the buggy version (requires mounted volume)
+                  Example: docker run -v $(pwd):/patches IMAGE apply_patch /patches/fix.patch
+  test_patched    Test the buggy version with your applied patch
+  show_diff       Show the diff between buggy and fixed versions
+  bash            Start a bash shell
+  help            Show this help message
+
+Pulling image alfin06/agentissue-bench:pythagora_55...
+Failed to pull alfin06/agentissue-bench:pythagora_55: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=pythagora_55&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:chatdev_413...
+Failed to pull alfin06/agentissue-bench:chatdev_413: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:chatdev_413/json: Not Found ("No such image: alfin06/agentissue-bench:chatdev_413")
+Pulling image alfin06/agentissue-bench:superagent_953...
+Failed to pull alfin06/agentissue-bench:superagent_953: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=superagent_953&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:chatdev_465...
+Failed to pull alfin06/agentissue-bench:chatdev_465: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:chatdev_465/json: Not Found ("No such image: alfin06/agentissue-bench:chatdev_465")
+Pulling image alfin06/agentissue-bench:crewai_1270...
+Failed to pull alfin06/agentissue-bench:crewai_1270: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=crewai_1270&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:crewai_1323...
+Failed to pull alfin06/agentissue-bench:crewai_1323: 404 Client Error for http+docker://localhost/v1.51/images/create?tag=crewai_1323&fromImage=alfin06%2Fagentissue-bench: Not Found ("no matching manifest for linux/arm64/v8 in the manifest list entries: no match for platform in manifest: not found")
+Pulling image alfin06/agentissue-bench:sweagent_741...
+Failed to pull alfin06/agentissue-bench:sweagent_741: 404 Client Error for http+docker://localhost/v1.51/images/alfin06/agentissue-bench:sweagent_741/json: Not Found ("No such image: alfin06/agentissue-bench:sweagent_741")
+Pulling image alfin06/agentissue-bench:gpt-engineer_1197...
+Failed to pull alfin06/agentissue-bench:gpt-engineer_1197: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=gpt-engineer_1197&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+Pulling image alfin06/agentissue-bench:gpt-researcher_1027...
+Failed to pull alfin06/agentissue-bench:gpt-researcher_1027: 500 Server Error for http+docker://localhost/v1.51/images/create?tag=gpt-researcher_1027&fromImage=alfin06%2Fagentissue-bench: Internal Server Error ("error from registry: You have reached your unauthenticated pull rate limit. https://www.docker.com/increase-rate-limit")
+
+[2025-11-19 02:55:54] ✓ Command succeeded
+[2025-11-19 02:55:54] ✓ Đã pull thành công tất cả Docker images
+[2025-11-19 02:55:54] 
+================================================================================
+[2025-11-19 02:55:54] BƯỚC 2A: CHẠY AGENTLESS - gpt-4o
+[2025-11-19 02:55:54] ================================================================================
+[2025-11-19 02:55:54] Installing Agentless dependencies...
+[2025-11-19 02:55:54] 
+>>> Executing: pip install -r requirements.txt
+[2025-11-19 02:55:59] STDOUT:
+Collecting swebench@ git+https://github.com/princeton-nlp/SWE-bench (from -r requirements.txt (line 9))
+  Cloning https://github.com/princeton-nlp/SWE-bench to /private/var/folders/lk/mt3w52mn0rz_5j5kq1vm9z8w0000gn/T/pip-install-5xb7vaf4/swebench_ba2f8fc7a9db426b8eed1f6dbf78c96d
+  Resolved https://github.com/princeton-nlp/SWE-bench to commit ff23f82f8783b90dbcd904c327127f9dbfc2fb69
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: anthropic in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (0.74.0)
+Requirement already satisfied: openai in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 2)) (1.108.1)
+Requirement already satisfied: pre-commit in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 3)) (4.4.0)
+Requirement already satisfied: datasets in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 4)) (4.4.1)
+Requirement already satisfied: tiktoken in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 5)) (0.11.0)
+Requirement already satisfied: libcst in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 6)) (1.8.6)
+Requirement already satisfied: llama-index in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 7)) (0.14.8)
+Requirement already satisfied: jsonlines in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 8)) (4.0.0)
+Requirement already satisfied: beautifulsoup4 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.13.5)
+Requirement already satisfied: chardet in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (5.2.0)
+Requirement already satisfied: docker in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (7.1.0)
+Requirement already satisfied: ghapi in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.0.8)
+Requirement already satisfied: GitPython in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (3.1.45)
+Requirement already satisfied: modal in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.2.2)
+Requirement already satisfied: python-dotenv in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: requests in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.32.3)
+Requirement already satisfied: rich in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (13.9.4)
+Requirement already satisfied: tenacity in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (9.1.2)
+Requirement already satisfied: tqdm in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.67.1)
+Requirement already satisfied: unidiff in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.7.5)
+Requirement already satisfied: anyio<5,>=3.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (4.10.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (1.9.0)
+Requirement already satisfied: docstring-parser<1,>=0.15 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (0.17.0)
+Requirement already satisfied: httpx<1,>=0.25.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (0.27.0)
+Requirement already satisfied: jiter<1,>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (0.11.0)
+Requirement already satisfied: pydantic<3,>=1.9.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (2.11.7)
+Requirement already satisfied: sniffio in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: typing-extensions<5,>=4.10 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (4.15.0)
+Requirement already satisfied: idna>=2.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anyio<5,>=3.5.0->anthropic->-r requirements.txt (line 1)) (3.7)
+Requirement already satisfied: certifi in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from httpx<1,>=0.25.0->anthropic->-r requirements.txt (line 1)) (2025.10.5)
+Requirement already satisfied: httpcore==1.* in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from httpx<1,>=0.25.0->anthropic->-r requirements.txt (line 1)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from httpcore==1.*->httpx<1,>=0.25.0->anthropic->-r requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: annotated-types>=0.6.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pydantic<3,>=1.9.0->anthropic->-r requirements.txt (line 1)) (0.6.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pydantic<3,>=1.9.0->anthropic->-r requirements.txt (line 1)) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pydantic<3,>=1.9.0->anthropic->-r requirements.txt (line 1)) (0.4.0)
+Requirement already satisfied: cfgv>=2.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (3.4.0)
+Requirement already satisfied: identify>=1.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (2.6.15)
+Requirement already satisfied: nodeenv>=0.11.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (1.9.1)
+Requirement already satisfied: pyyaml>=5.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (6.0.2)
+Requirement already satisfied: virtualenv>=20.10.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (20.35.4)
+Requirement already satisfied: filelock in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (3.19.1)
+Requirement already satisfied: numpy>=1.17 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (2.2.6)
+Requirement already satisfied: pyarrow>=21.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (22.0.0)
+Requirement already satisfied: dill<0.4.1,>=0.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (0.4.0)
+Requirement already satisfied: pandas in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (2.2.3)
+Requirement already satisfied: xxhash in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.19 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (0.70.18)
+Requirement already satisfied: fsspec<=2025.10.0,>=2023.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (2025.7.0)
+Requirement already satisfied: huggingface-hub<2.0,>=0.25.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (0.34.4)
+Requirement already satisfied: packaging in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (24.2)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (3.13.2)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 4)) (1.1.8)
+Requirement already satisfied: regex>=2022.1.18 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from tiktoken->-r requirements.txt (line 5)) (2025.7.34)
+Requirement already satisfied: pyyaml-ft>=8.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from libcst->-r requirements.txt (line 6)) (8.0.0)
+Requirement already satisfied: llama-index-cli<0.6,>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.3)
+Requirement already satisfied: llama-index-core<0.15.0,>=0.14.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.14.8)
+Requirement already satisfied: llama-index-embeddings-openai<0.6,>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.1)
+Requirement already satisfied: llama-index-indices-managed-llama-cloud>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.9.4)
+Requirement already satisfied: llama-index-llms-openai<0.7,>=0.6.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.6.9)
+Requirement already satisfied: llama-index-readers-file<0.6,>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.4)
+Requirement already satisfied: llama-index-readers-llama-parse>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.1)
+Requirement already satisfied: nltk>3.8.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (3.9.1)
+Requirement already satisfied: aiosqlite in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.21.0)
+Requirement already satisfied: banks<3,>=2.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (2.2.0)
+Requirement already satisfied: dataclasses-json in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.6.7)
+Requirement already satisfied: deprecated>=1.2.9.3 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.2.18)
+Requirement already satisfied: dirtyjson<2,>=1.0.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.0.8)
+Requirement already satisfied: filetype<2,>=1.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.2.0)
+Requirement already satisfied: llama-index-workflows!=2.9.0,<3,>=2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (2.11.2)
+Requirement already satisfied: nest-asyncio<2,>=1.5.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.6.0)
+Requirement already satisfied: networkx>=3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.5)
+Requirement already satisfied: pillow>=9.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (11.3.0)
+Requirement already satisfied: platformdirs in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (4.3.7)
+Requirement already satisfied: setuptools>=80.9.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (80.9.0)
+Requirement already satisfied: sqlalchemy>=1.4.49 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from sqlalchemy[asyncio]>=1.4.49->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (2.0.43)
+Requirement already satisfied: typing-inspect>=0.8.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.9.0)
+Requirement already satisfied: wrapt in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.17.3)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (6.7.0)
+Requirement already satisfied: propcache>=0.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (1.22.0)
+Requirement already satisfied: griffe in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.15.0)
+Requirement already satisfied: jinja2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.1.6)
+Requirement already satisfied: defusedxml>=0.7.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r requirements.txt (line 7)) (0.7.1)
+Requirement already satisfied: pypdf<7,>=5.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r requirements.txt (line 7)) (6.0.0)
+Requirement already satisfied: striprtf<0.0.27,>=0.0.26 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r requirements.txt (line 7)) (0.0.26)
+Requirement already satisfied: soupsieve>1.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from beautifulsoup4->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.7)
+Requirement already satisfied: llama-index-instrumentation>=0.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-workflows!=2.9.0,<3,>=2->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.4.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pandas->datasets->-r requirements.txt (line 4)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pandas->datasets->-r requirements.txt (line 4)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pandas->datasets->-r requirements.txt (line 4)) (2025.2)
+Requirement already satisfied: llama-cloud==0.1.35 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-indices-managed-llama-cloud>=0.4.0->llama-index->-r requirements.txt (line 7)) (0.1.35)
+Requirement already satisfied: llama-parse>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-llama-parse>=0.4.0->llama-index->-r requirements.txt (line 7)) (0.6.54)
+Requirement already satisfied: llama-cloud-services>=0.6.54 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-parse>=0.5.0->llama-index-readers-llama-parse>=0.4.0->llama-index->-r requirements.txt (line 7)) (0.6.54)
+Requirement already satisfied: click<9,>=8.1.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-cloud-services>=0.6.54->llama-parse>=0.5.0->llama-index-readers-llama-parse>=0.4.0->llama-index->-r requirements.txt (line 7)) (8.2.1)
+Requirement already satisfied: joblib in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from nltk>3.8.1->llama-index->-r requirements.txt (line 7)) (1.5.1)
+Requirement already satisfied: six>=1.5 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from python-dateutil>=2.8.2->pandas->datasets->-r requirements.txt (line 4)) (1.17.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from requests->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (3.3.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from requests->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.5.0)
+Requirement already satisfied: greenlet>=1 in /Users/tranvanhuy/.local/lib/python3.13/site-packages (from sqlalchemy[asyncio]>=1.4.49->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.2.4)
+Requirement already satisfied: mypy-extensions>=0.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from typing-inspect>=0.8.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.1.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from virtualenv>=20.10.0->pre-commit->-r requirements.txt (line 3)) (0.4.0)
+Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from dataclasses-json->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.26.1)
+Requirement already satisfied: fastcore>=1.7.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from ghapi->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.8.16)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from GitPython->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->GitPython->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (5.0.2)
+Requirement already satisfied: colorama>=0.4 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from griffe->banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.4.6)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from jinja2->banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.0.2)
+Requirement already satisfied: cbor2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (5.7.1)
+Requirement already satisfied: grpclib<0.4.9,>=0.4.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.4.8)
+Requirement already satisfied: protobuf!=4.24.0,<7.0,>=3.19 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (6.32.0)
+Requirement already satisfied: synchronicity~=0.10.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.10.4)
+Requirement already satisfied: toml in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.10.2)
+Requirement already satisfied: typer>=0.9 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.18.0)
+Requirement already satisfied: types-certifi in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2021.10.8.3)
+Requirement already satisfied: types-toml in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.10.8.20240310)
+Requirement already satisfied: watchfiles in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.1.0)
+Requirement already satisfied: h2<5,>=3.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from grpclib<0.4.9,>=0.4.7->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.3.0)
+Requirement already satisfied: hyperframe<7,>=6.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from h2<5,>=3.1.0->grpclib<0.4.9,>=0.4.7->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (6.1.0)
+Requirement already satisfied: hpack<5,>=4.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from h2<5,>=3.1.0->grpclib<0.4.9,>=0.4.7->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.1.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from rich->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from rich->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.19.1)
+Requirement already satisfied: mdurl~=0.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from markdown-it-py>=2.2.0->rich->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.1.0)
+Requirement already satisfied: shellingham>=1.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from typer>=0.9->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.5.4)
+
+[2025-11-19 02:55:59] STDERR:
+  Running command git clone --filter=blob:none --quiet https://github.com/princeton-nlp/SWE-bench /private/var/folders/lk/mt3w52mn0rz_5j5kq1vm9z8w0000gn/T/pip-install-5xb7vaf4/swebench_ba2f8fc7a9db426b8eed1f6dbf78c96d
+
+[1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m A new release of pip is available: [0m[31;49m25.2[0m[39;49m -> [0m[32;49m25.3[0m
+[1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m To update, run: [0m[32;49mpip install --upgrade pip[0m
+
+[2025-11-19 02:55:59] ✓ Command succeeded
+[2025-11-19 02:55:59] 
+Agentless step 1/8
+[2025-11-19 02:55:59] 
+>>> Executing: python agentless/fl/localize.py --file_level --output_folder results-agentissue/swe-bench-lite/file_level --num_threads 1 --skip_existing --backend openai --model gpt-4o --dataset_json agent_issue.json
+[2025-11-19 02:56:03] STDERR:
+usage: localize.py [-h] --output_folder OUTPUT_FOLDER
+                   [--output_file OUTPUT_FILE] [--start_file START_FILE]
+                   [--file_level] [--related_level] [--fine_grain_line_level]
+                   [--top_n TOP_N] [--temperature TEMPERATURE]
+                   [--num_samples NUM_SAMPLES] [--compress]
+                   [--compress_assign]
+                   [--compress_assign_total_lines COMPRESS_ASSIGN_TOTAL_LINES]
+                   [--compress_assign_prefix_lines COMPRESS_ASSIGN_PREFIX_LINES]
+                   [--compress_assign_suffix_lines COMPRESS_ASSIGN_SUFFIX_LINES]
+                   [--merge] [--add_space] [--no_line_number]
+                   [--sticky_scroll] [--related_level_separate_file]
+                   [--context_window CONTEXT_WINDOW] [--keep_old_order]
+                   [--irrelevant] [--direct_edit_loc]
+                   [--num_threads NUM_THREADS] [--target_id TARGET_ID]
+                   [--skip_existing] [--mock]
+                   [--model {gpt-4o-2024-05-13,deepseek-coder,gpt-4o-mini-2024-07-18,claude-3-5-sonnet-20241022}]
+                   [--backend {openai,deepseek,anthropic}]
+                   --dataset_json DATASET_JSON
+localize.py: error: argument --model: invalid choice: 'gpt-4o' (choose from gpt-4o-2024-05-13, deepseek-coder, gpt-4o-mini-2024-07-18, claude-3-5-sonnet-20241022)
+
+[2025-11-19 02:56:03] ✗ Command failed with return code 2
+[2025-11-19 02:56:03] ✗ Agentless step 1 failed
+[2025-11-19 02:56:03] ✗ WARNING: Agentless failed for gpt-4o
+[2025-11-19 02:56:03] 
+================================================================================
+[2025-11-19 02:56:03] BƯỚC 2B: CHẠY AUTOCODEROVER - gpt-4o
+[2025-11-19 02:56:03] ================================================================================
+[2025-11-19 02:56:03] 
+>>> Executing: python run_autocoderover.py
+[2025-11-19 02:56:06] STDOUT:
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/gpt-engineer-1197 --issue-file tmp_issue_gpt-engineer-1197.json --task-id gpt-engineer__gpt-engineer-1197
+❌ Task gpt-engineer__gpt-engineer-1197 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/pythagora-55 --issue-file tmp_issue_pythagora-55.json --task-id pythagora__pythagora-55
+❌ Task pythagora__pythagora-55 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/lagent-279 --issue-file tmp_issue_lagent-279.json --task-id lagent__lagent-279
+❌ Task lagent__lagent-279 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/lagent-239 --issue-file tmp_issue_lagent-239.json --task-id lagent__lagent-239
+❌ Task lagent__lagent-239 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/lagent-244 --issue-file tmp_issue_lagent-244.json --task-id lagent__lagent-244
+❌ Task lagent__lagent-244 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/superagent-953 --issue-file tmp_issue_superagent-953.json --task-id superagent__superagent-953
+❌ Task superagent__superagent-953 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/gpt-researcher-1027 --issue-file tmp_issue_gpt-researcher-1027.json --task-id gpt-researcher__gpt-researcher-1027
+❌ Task gpt-researcher__gpt-researcher-1027 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/evo.ninja-652 --issue-file tmp_issue_evo.ninja-652.json --task-id evo.ninja__evo.ninja-652
+❌ Task evo.ninja__evo.ninja-652 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/evo.ninja-594 --issue-file tmp_issue_evo.ninja-594.json --task-id evo.ninja__evo.ninja-594
+❌ Task evo.ninja__evo.ninja-594 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/evo.ninja-525 --issue-file tmp_issue_evo.ninja-525.json --task-id evo.ninja__evo.ninja-525
+❌ Task evo.ninja__evo.ninja-525 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/evo.ninja-515 --issue-file tmp_issue_evo.ninja-515.json --task-id evo.ninja__evo.ninja-515
+❌ Task evo.ninja__evo.ninja-515 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/evo.ninja-504 --issue-file tmp_issue_evo.ninja-504.json --task-id evo.ninja__evo.ninja-504
+❌ Task evo.ninja__evo.ninja-504 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/evo.ninja-445 --issue-file tmp_issue_evo.ninja-445.json --task-id evo.ninja__evo.ninja-445
+❌ Task evo.ninja__evo.ninja-445 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/AGiXT-1253 --issue-file tmp_issue_AGiXT-1253.json --task-id AGiXT__AGiXT-1253
+❌ Task AGiXT__AGiXT-1253 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/AGiXT-1030 --issue-file tmp_issue_AGiXT-1030.json --task-id AGiXT__AGiXT-1030
+❌ Task AGiXT__AGiXT-1030 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/AGiXT-1026 --issue-file tmp_issue_AGiXT-1026.json --task-id AGiXT__AGiXT-1026
+❌ Task AGiXT__AGiXT-1026 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/AGiXT-1256 --issue-file tmp_issue_AGiXT-1256.json --task-id AGiXT__AGiXT-1256
+❌ Task AGiXT__AGiXT-1256 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/AGiXT-1369 --issue-file tmp_issue_AGiXT-1369.json --task-id AGiXT__AGiXT-1369
+❌ Task AGiXT__AGiXT-1369 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/AGiXT-1371 --issue-file tmp_issue_AGiXT-1371.json --task-id AGiXT__AGiXT-1371
+❌ Task AGiXT__AGiXT-1371 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/MetaGPT-1313 --issue-file tmp_issue_MetaGPT-1313.json --task-id MetaGPT__MetaGPT-1313
+❌ Task MetaGPT__MetaGPT-1313 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/SWE-agent-741 --issue-file tmp_issue_SWE-agent-741.json --task-id SWE-agent__SWE-agent-741
+❌ Task SWE-agent__SWE-agent-741 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/SWE-agent-333 --issue-file tmp_issue_SWE-agent-333.json --task-id SWE-agent__SWE-agent-333
+❌ Task SWE-agent__SWE-agent-333 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/SWE-agent-362 --issue-file tmp_issue_SWE-agent-362.json --task-id SWE-agent__SWE-agent-362
+❌ Task SWE-agent__SWE-agent-362 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/camel-1145 --issue-file tmp_issue_camel-1145.json --task-id camel__camel-1145
+❌ Task camel__camel-1145 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/camel-1309 --issue-file tmp_issue_camel-1309.json --task-id camel__camel-1309
+❌ Task camel__camel-1309 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/camel-1273 --issue-file tmp_issue_camel-1273.json --task-id camel__camel-1273
+❌ Task camel__camel-1273 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/camel-88 --issue-file tmp_issue_camel-88.json --task-id camel__camel-88
+❌ Task camel__camel-88 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/camel-1614 --issue-file tmp_issue_camel-1614.json --task-id camel__camel-1614
+❌ Task camel__camel-1614 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-5012 --issue-file tmp_issue_autogen-5012.json --task-id autogen__autogen-5012
+❌ Task autogen__autogen-5012 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-5007 --issue-file tmp_issue_autogen-5007.json --task-id autogen__autogen-5007
+❌ Task autogen__autogen-5007 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-4785 --issue-file tmp_issue_autogen-4785.json --task-id autogen__autogen-4785
+❌ Task autogen__autogen-4785 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-4733 --issue-file tmp_issue_autogen-4733.json --task-id autogen__autogen-4733
+❌ Task autogen__autogen-4733 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-4382 --issue-file tmp_issue_autogen-4382.json --task-id autogen__autogen-4382
+❌ Task autogen__autogen-4382 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-4197 --issue-file tmp_issue_autogen-4197.json --task-id autogen__autogen-4197
+❌ Task autogen__autogen-4197 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-3361 --issue-file tmp_issue_autogen-3361.json --task-id autogen__autogen-3361
+❌ Task autogen__autogen-3361 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-1844 --issue-file tmp_issue_autogen-1844.json --task-id autogen__autogen-1844
+❌ Task autogen__autogen-1844 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-1174 --issue-file tmp_issue_autogen-1174.json --task-id autogen__autogen-1174
+❌ Task autogen__autogen-1174 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/autogen-5124 --issue-file tmp_issue_autogen-5124.json --task-id autogen__autogen-5124
+❌ Task autogen__autogen-5124 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1532 --issue-file tmp_issue_crewAI-1532.json --task-id crewAI__crewAI-1532
+❌ Task crewAI__crewAI-1532 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1463 --issue-file tmp_issue_crewAI-1463.json --task-id crewAI__crewAI-1463
+❌ Task crewAI__crewAI-1463 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1370 --issue-file tmp_issue_crewAI-1370.json --task-id crewAI__crewAI-1370
+❌ Task crewAI__crewAI-1370 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1323 --issue-file tmp_issue_crewAI-1323.json --task-id crewAI__crewAI-1323
+❌ Task crewAI__crewAI-1323 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1270 --issue-file tmp_issue_crewAI-1270.json --task-id crewAI__crewAI-1270
+❌ Task crewAI__crewAI-1270 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1723 --issue-file tmp_issue_crewAI-1723.json --task-id crewAI__crewAI-1723
+❌ Task crewAI__crewAI-1723 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1753 --issue-file tmp_issue_crewAI-1753.json --task-id crewAI__crewAI-1753
+❌ Task crewAI__crewAI-1753 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1824 --issue-file tmp_issue_crewAI-1824.json --task-id crewAI__crewAI-1824
+❌ Task crewAI__crewAI-1824 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/crewAI-1934 --issue-file tmp_issue_crewAI-1934.json --task-id crewAI__crewAI-1934
+❌ Task crewAI__crewAI-1934 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/ChatDev-465 --issue-file tmp_issue_ChatDev-465.json --task-id ChatDev__ChatDev-465
+❌ Task ChatDev__ChatDev-465 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/ChatDev-318 --issue-file tmp_issue_ChatDev-318.json --task-id ChatDev__ChatDev-318
+❌ Task ChatDev__ChatDev-318 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model gpt-4o --model-temperature 0.2 --local-repo repo/ChatDev-413 --issue-file tmp_issue_ChatDev-413.json --task-id ChatDev__ChatDev-413
+❌ Task ChatDev__ChatDev-413 failed!
+
+[2025-11-19 02:56:06] STDERR:
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+
+[2025-11-19 02:56:06] ✓ Command succeeded
+[2025-11-19 02:56:06] ✓ AutoCodeRover (gpt-4o) completed successfully
+[2025-11-19 02:56:06] 
+================================================================================
+[2025-11-19 02:56:06] BƯỚC 2C: CHẠY SWE-AGENT - gpt-4o
+[2025-11-19 02:56:06] ================================================================================
+[2025-11-19 02:56:06] Lưu ý: SWE-agent có thể mất nhiều thời gian (vài giờ)
+[2025-11-19 02:56:06] Bạn có thể theo dõi tiến trình trong log file
+[2025-11-19 02:56:06] 
+>>> Executing: ./gen_patches_all.sh
+[2025-11-19 02:56:06] STDERR:
+/bin/sh: ./gen_patches_all.sh: Permission denied
+
+[2025-11-19 02:56:06] ✗ Command failed with return code 126
+[2025-11-19 02:56:06] ✗ SWE-agent (gpt-4o) failed
+[2025-11-19 02:56:06] ✗ WARNING: SWE-agent failed for gpt-4o
+[2025-11-19 02:56:06] 
+================================================================================
+[2025-11-19 02:56:06] BƯỚC 2A: CHẠY AGENTLESS - claude-3-5-sonnet-20241022
+[2025-11-19 02:56:06] ================================================================================
+[2025-11-19 02:56:06] Installing Agentless dependencies...
+[2025-11-19 02:56:06] 
+>>> Executing: pip install -r requirements.txt
+[2025-11-19 02:56:11] STDOUT:
+Collecting swebench@ git+https://github.com/princeton-nlp/SWE-bench (from -r requirements.txt (line 9))
+  Cloning https://github.com/princeton-nlp/SWE-bench to /private/var/folders/lk/mt3w52mn0rz_5j5kq1vm9z8w0000gn/T/pip-install-gpa_8t46/swebench_1bcbf4b34cb04e22800c6ab1216bd525
+  Resolved https://github.com/princeton-nlp/SWE-bench to commit ff23f82f8783b90dbcd904c327127f9dbfc2fb69
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: anthropic in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (0.74.0)
+Requirement already satisfied: openai in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 2)) (1.108.1)
+Requirement already satisfied: pre-commit in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 3)) (4.4.0)
+Requirement already satisfied: datasets in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 4)) (4.4.1)
+Requirement already satisfied: tiktoken in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 5)) (0.11.0)
+Requirement already satisfied: libcst in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 6)) (1.8.6)
+Requirement already satisfied: llama-index in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 7)) (0.14.8)
+Requirement already satisfied: jsonlines in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from -r requirements.txt (line 8)) (4.0.0)
+Requirement already satisfied: beautifulsoup4 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.13.5)
+Requirement already satisfied: chardet in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (5.2.0)
+Requirement already satisfied: docker in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (7.1.0)
+Requirement already satisfied: ghapi in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.0.8)
+Requirement already satisfied: GitPython in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (3.1.45)
+Requirement already satisfied: modal in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.2.2)
+Requirement already satisfied: python-dotenv in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: requests in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.32.3)
+Requirement already satisfied: rich in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (13.9.4)
+Requirement already satisfied: tenacity in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (9.1.2)
+Requirement already satisfied: tqdm in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.67.1)
+Requirement already satisfied: unidiff in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.7.5)
+Requirement already satisfied: anyio<5,>=3.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (4.10.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (1.9.0)
+Requirement already satisfied: docstring-parser<1,>=0.15 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (0.17.0)
+Requirement already satisfied: httpx<1,>=0.25.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (0.27.0)
+Requirement already satisfied: jiter<1,>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (0.11.0)
+Requirement already satisfied: pydantic<3,>=1.9.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (2.11.7)
+Requirement already satisfied: sniffio in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: typing-extensions<5,>=4.10 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anthropic->-r requirements.txt (line 1)) (4.15.0)
+Requirement already satisfied: idna>=2.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from anyio<5,>=3.5.0->anthropic->-r requirements.txt (line 1)) (3.7)
+Requirement already satisfied: certifi in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from httpx<1,>=0.25.0->anthropic->-r requirements.txt (line 1)) (2025.10.5)
+Requirement already satisfied: httpcore==1.* in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from httpx<1,>=0.25.0->anthropic->-r requirements.txt (line 1)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from httpcore==1.*->httpx<1,>=0.25.0->anthropic->-r requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: annotated-types>=0.6.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pydantic<3,>=1.9.0->anthropic->-r requirements.txt (line 1)) (0.6.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pydantic<3,>=1.9.0->anthropic->-r requirements.txt (line 1)) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pydantic<3,>=1.9.0->anthropic->-r requirements.txt (line 1)) (0.4.0)
+Requirement already satisfied: cfgv>=2.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (3.4.0)
+Requirement already satisfied: identify>=1.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (2.6.15)
+Requirement already satisfied: nodeenv>=0.11.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (1.9.1)
+Requirement already satisfied: pyyaml>=5.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (6.0.2)
+Requirement already satisfied: virtualenv>=20.10.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pre-commit->-r requirements.txt (line 3)) (20.35.4)
+Requirement already satisfied: filelock in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (3.19.1)
+Requirement already satisfied: numpy>=1.17 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (2.2.6)
+Requirement already satisfied: pyarrow>=21.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (22.0.0)
+Requirement already satisfied: dill<0.4.1,>=0.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (0.4.0)
+Requirement already satisfied: pandas in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (2.2.3)
+Requirement already satisfied: xxhash in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.19 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (0.70.18)
+Requirement already satisfied: fsspec<=2025.10.0,>=2023.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (2025.7.0)
+Requirement already satisfied: huggingface-hub<2.0,>=0.25.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (0.34.4)
+Requirement already satisfied: packaging in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from datasets->-r requirements.txt (line 4)) (24.2)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (3.13.2)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 4)) (1.1.8)
+Requirement already satisfied: regex>=2022.1.18 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from tiktoken->-r requirements.txt (line 5)) (2025.7.34)
+Requirement already satisfied: pyyaml-ft>=8.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from libcst->-r requirements.txt (line 6)) (8.0.0)
+Requirement already satisfied: llama-index-cli<0.6,>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.3)
+Requirement already satisfied: llama-index-core<0.15.0,>=0.14.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.14.8)
+Requirement already satisfied: llama-index-embeddings-openai<0.6,>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.1)
+Requirement already satisfied: llama-index-indices-managed-llama-cloud>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.9.4)
+Requirement already satisfied: llama-index-llms-openai<0.7,>=0.6.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.6.9)
+Requirement already satisfied: llama-index-readers-file<0.6,>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.4)
+Requirement already satisfied: llama-index-readers-llama-parse>=0.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (0.5.1)
+Requirement already satisfied: nltk>3.8.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index->-r requirements.txt (line 7)) (3.9.1)
+Requirement already satisfied: aiosqlite in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.21.0)
+Requirement already satisfied: banks<3,>=2.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (2.2.0)
+Requirement already satisfied: dataclasses-json in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.6.7)
+Requirement already satisfied: deprecated>=1.2.9.3 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.2.18)
+Requirement already satisfied: dirtyjson<2,>=1.0.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.0.8)
+Requirement already satisfied: filetype<2,>=1.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.2.0)
+Requirement already satisfied: llama-index-workflows!=2.9.0,<3,>=2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (2.11.2)
+Requirement already satisfied: nest-asyncio<2,>=1.5.8 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.6.0)
+Requirement already satisfied: networkx>=3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.5)
+Requirement already satisfied: pillow>=9.0.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (11.3.0)
+Requirement already satisfied: platformdirs in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (4.3.7)
+Requirement already satisfied: setuptools>=80.9.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (80.9.0)
+Requirement already satisfied: sqlalchemy>=1.4.49 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from sqlalchemy[asyncio]>=1.4.49->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (2.0.43)
+Requirement already satisfied: typing-inspect>=0.8.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.9.0)
+Requirement already satisfied: wrapt in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.17.3)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (6.7.0)
+Requirement already satisfied: propcache>=0.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets->-r requirements.txt (line 4)) (1.22.0)
+Requirement already satisfied: griffe in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.15.0)
+Requirement already satisfied: jinja2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.1.6)
+Requirement already satisfied: defusedxml>=0.7.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r requirements.txt (line 7)) (0.7.1)
+Requirement already satisfied: pypdf<7,>=5.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r requirements.txt (line 7)) (6.0.0)
+Requirement already satisfied: striprtf<0.0.27,>=0.0.26 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-file<0.6,>=0.5.0->llama-index->-r requirements.txt (line 7)) (0.0.26)
+Requirement already satisfied: soupsieve>1.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from beautifulsoup4->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.7)
+Requirement already satisfied: llama-index-instrumentation>=0.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-workflows!=2.9.0,<3,>=2->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.4.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pandas->datasets->-r requirements.txt (line 4)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pandas->datasets->-r requirements.txt (line 4)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from pandas->datasets->-r requirements.txt (line 4)) (2025.2)
+Requirement already satisfied: llama-cloud==0.1.35 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-indices-managed-llama-cloud>=0.4.0->llama-index->-r requirements.txt (line 7)) (0.1.35)
+Requirement already satisfied: llama-parse>=0.5.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-index-readers-llama-parse>=0.4.0->llama-index->-r requirements.txt (line 7)) (0.6.54)
+Requirement already satisfied: llama-cloud-services>=0.6.54 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-parse>=0.5.0->llama-index-readers-llama-parse>=0.4.0->llama-index->-r requirements.txt (line 7)) (0.6.54)
+Requirement already satisfied: click<9,>=8.1.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from llama-cloud-services>=0.6.54->llama-parse>=0.5.0->llama-index-readers-llama-parse>=0.4.0->llama-index->-r requirements.txt (line 7)) (8.2.1)
+Requirement already satisfied: joblib in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from nltk>3.8.1->llama-index->-r requirements.txt (line 7)) (1.5.1)
+Requirement already satisfied: six>=1.5 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from python-dateutil>=2.8.2->pandas->datasets->-r requirements.txt (line 4)) (1.17.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from requests->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (3.3.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from requests->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.5.0)
+Requirement already satisfied: greenlet>=1 in /Users/tranvanhuy/.local/lib/python3.13/site-packages (from sqlalchemy[asyncio]>=1.4.49->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.2.4)
+Requirement already satisfied: mypy-extensions>=0.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from typing-inspect>=0.8.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (1.1.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from virtualenv>=20.10.0->pre-commit->-r requirements.txt (line 3)) (0.4.0)
+Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from dataclasses-json->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.26.1)
+Requirement already satisfied: fastcore>=1.7.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from ghapi->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.8.16)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from GitPython->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->GitPython->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (5.0.2)
+Requirement already satisfied: colorama>=0.4 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from griffe->banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (0.4.6)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from jinja2->banks<3,>=2.2.0->llama-index-core<0.15.0,>=0.14.8->llama-index->-r requirements.txt (line 7)) (3.0.2)
+Requirement already satisfied: cbor2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (5.7.1)
+Requirement already satisfied: grpclib<0.4.9,>=0.4.7 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.4.8)
+Requirement already satisfied: protobuf!=4.24.0,<7.0,>=3.19 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (6.32.0)
+Requirement already satisfied: synchronicity~=0.10.2 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.10.4)
+Requirement already satisfied: toml in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.10.2)
+Requirement already satisfied: typer>=0.9 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.18.0)
+Requirement already satisfied: types-certifi in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2021.10.8.3)
+Requirement already satisfied: types-toml in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.10.8.20240310)
+Requirement already satisfied: watchfiles in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.1.0)
+Requirement already satisfied: h2<5,>=3.1.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from grpclib<0.4.9,>=0.4.7->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.3.0)
+Requirement already satisfied: hyperframe<7,>=6.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from h2<5,>=3.1.0->grpclib<0.4.9,>=0.4.7->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (6.1.0)
+Requirement already satisfied: hpack<5,>=4.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from h2<5,>=3.1.0->grpclib<0.4.9,>=0.4.7->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (4.1.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from rich->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from rich->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (2.19.1)
+Requirement already satisfied: mdurl~=0.1 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from markdown-it-py>=2.2.0->rich->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (0.1.0)
+Requirement already satisfied: shellingham>=1.3.0 in /opt/homebrew/Caskroom/miniconda/base/lib/python3.13/site-packages (from typer>=0.9->modal->swebench@ git+https://github.com/princeton-nlp/SWE-bench->-r requirements.txt (line 9)) (1.5.4)
+
+[2025-11-19 02:56:11] STDERR:
+  Running command git clone --filter=blob:none --quiet https://github.com/princeton-nlp/SWE-bench /private/var/folders/lk/mt3w52mn0rz_5j5kq1vm9z8w0000gn/T/pip-install-gpa_8t46/swebench_1bcbf4b34cb04e22800c6ab1216bd525
+
+[1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m A new release of pip is available: [0m[31;49m25.2[0m[39;49m -> [0m[32;49m25.3[0m
+[1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m To update, run: [0m[32;49mpip install --upgrade pip[0m
+
+[2025-11-19 02:56:11] ✓ Command succeeded
+[2025-11-19 02:56:11] 
+Agentless step 1/8
+[2025-11-19 02:56:11] 
+>>> Executing: python agentless/fl/localize.py --file_level --output_folder results-agentissue/swe-bench-lite/file_level --num_threads 1 --skip_existing --backend anthropic --model claude-3-5-sonnet-20241022 --dataset_json agent_issue.json
+[2025-11-19 02:56:13] STDERR:
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/Agentless/agentless/fl/localize.py", line 620, in <module>
+    main()
+    ~~~~^^
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/Agentless/agentless/fl/localize.py", line 617, in main
+    localize(args)
+    ~~~~~~~~^^^^^^
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/Agentless/agentless/fl/localize.py", line 437, in localize
+    with open(args.dataset_json, "r") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'agent_issue.json'
+
+[2025-11-19 02:56:13] ✗ Command failed with return code 1
+[2025-11-19 02:56:13] ✗ Agentless step 1 failed
+[2025-11-19 02:56:13] ✗ WARNING: Agentless failed for claude-3-5-sonnet-20241022
+[2025-11-19 02:56:13] 
+================================================================================
+[2025-11-19 02:56:13] BƯỚC 2B: CHẠY AUTOCODEROVER - claude-3-5-sonnet-20241022
+[2025-11-19 02:56:13] ================================================================================
+[2025-11-19 02:56:13] 
+>>> Executing: python run_autocoderover.py
+[2025-11-19 02:56:17] STDOUT:
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/gpt-engineer-1197 --issue-file tmp_issue_gpt-engineer-1197.json --task-id gpt-engineer__gpt-engineer-1197
+❌ Task gpt-engineer__gpt-engineer-1197 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/pythagora-55 --issue-file tmp_issue_pythagora-55.json --task-id pythagora__pythagora-55
+❌ Task pythagora__pythagora-55 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/lagent-279 --issue-file tmp_issue_lagent-279.json --task-id lagent__lagent-279
+❌ Task lagent__lagent-279 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/lagent-239 --issue-file tmp_issue_lagent-239.json --task-id lagent__lagent-239
+❌ Task lagent__lagent-239 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/lagent-244 --issue-file tmp_issue_lagent-244.json --task-id lagent__lagent-244
+❌ Task lagent__lagent-244 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/superagent-953 --issue-file tmp_issue_superagent-953.json --task-id superagent__superagent-953
+❌ Task superagent__superagent-953 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/gpt-researcher-1027 --issue-file tmp_issue_gpt-researcher-1027.json --task-id gpt-researcher__gpt-researcher-1027
+❌ Task gpt-researcher__gpt-researcher-1027 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/evo.ninja-652 --issue-file tmp_issue_evo.ninja-652.json --task-id evo.ninja__evo.ninja-652
+❌ Task evo.ninja__evo.ninja-652 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/evo.ninja-594 --issue-file tmp_issue_evo.ninja-594.json --task-id evo.ninja__evo.ninja-594
+❌ Task evo.ninja__evo.ninja-594 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/evo.ninja-525 --issue-file tmp_issue_evo.ninja-525.json --task-id evo.ninja__evo.ninja-525
+❌ Task evo.ninja__evo.ninja-525 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/evo.ninja-515 --issue-file tmp_issue_evo.ninja-515.json --task-id evo.ninja__evo.ninja-515
+❌ Task evo.ninja__evo.ninja-515 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/evo.ninja-504 --issue-file tmp_issue_evo.ninja-504.json --task-id evo.ninja__evo.ninja-504
+❌ Task evo.ninja__evo.ninja-504 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/evo.ninja-445 --issue-file tmp_issue_evo.ninja-445.json --task-id evo.ninja__evo.ninja-445
+❌ Task evo.ninja__evo.ninja-445 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/AGiXT-1253 --issue-file tmp_issue_AGiXT-1253.json --task-id AGiXT__AGiXT-1253
+❌ Task AGiXT__AGiXT-1253 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/AGiXT-1030 --issue-file tmp_issue_AGiXT-1030.json --task-id AGiXT__AGiXT-1030
+❌ Task AGiXT__AGiXT-1030 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/AGiXT-1026 --issue-file tmp_issue_AGiXT-1026.json --task-id AGiXT__AGiXT-1026
+❌ Task AGiXT__AGiXT-1026 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/AGiXT-1256 --issue-file tmp_issue_AGiXT-1256.json --task-id AGiXT__AGiXT-1256
+❌ Task AGiXT__AGiXT-1256 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/AGiXT-1369 --issue-file tmp_issue_AGiXT-1369.json --task-id AGiXT__AGiXT-1369
+❌ Task AGiXT__AGiXT-1369 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/AGiXT-1371 --issue-file tmp_issue_AGiXT-1371.json --task-id AGiXT__AGiXT-1371
+❌ Task AGiXT__AGiXT-1371 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/MetaGPT-1313 --issue-file tmp_issue_MetaGPT-1313.json --task-id MetaGPT__MetaGPT-1313
+❌ Task MetaGPT__MetaGPT-1313 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/SWE-agent-741 --issue-file tmp_issue_SWE-agent-741.json --task-id SWE-agent__SWE-agent-741
+❌ Task SWE-agent__SWE-agent-741 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/SWE-agent-333 --issue-file tmp_issue_SWE-agent-333.json --task-id SWE-agent__SWE-agent-333
+❌ Task SWE-agent__SWE-agent-333 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/SWE-agent-362 --issue-file tmp_issue_SWE-agent-362.json --task-id SWE-agent__SWE-agent-362
+❌ Task SWE-agent__SWE-agent-362 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/camel-1145 --issue-file tmp_issue_camel-1145.json --task-id camel__camel-1145
+❌ Task camel__camel-1145 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/camel-1309 --issue-file tmp_issue_camel-1309.json --task-id camel__camel-1309
+❌ Task camel__camel-1309 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/camel-1273 --issue-file tmp_issue_camel-1273.json --task-id camel__camel-1273
+❌ Task camel__camel-1273 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/camel-88 --issue-file tmp_issue_camel-88.json --task-id camel__camel-88
+❌ Task camel__camel-88 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/camel-1614 --issue-file tmp_issue_camel-1614.json --task-id camel__camel-1614
+❌ Task camel__camel-1614 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-5012 --issue-file tmp_issue_autogen-5012.json --task-id autogen__autogen-5012
+❌ Task autogen__autogen-5012 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-5007 --issue-file tmp_issue_autogen-5007.json --task-id autogen__autogen-5007
+❌ Task autogen__autogen-5007 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-4785 --issue-file tmp_issue_autogen-4785.json --task-id autogen__autogen-4785
+❌ Task autogen__autogen-4785 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-4733 --issue-file tmp_issue_autogen-4733.json --task-id autogen__autogen-4733
+❌ Task autogen__autogen-4733 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-4382 --issue-file tmp_issue_autogen-4382.json --task-id autogen__autogen-4382
+❌ Task autogen__autogen-4382 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-4197 --issue-file tmp_issue_autogen-4197.json --task-id autogen__autogen-4197
+❌ Task autogen__autogen-4197 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-3361 --issue-file tmp_issue_autogen-3361.json --task-id autogen__autogen-3361
+❌ Task autogen__autogen-3361 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-1844 --issue-file tmp_issue_autogen-1844.json --task-id autogen__autogen-1844
+❌ Task autogen__autogen-1844 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-1174 --issue-file tmp_issue_autogen-1174.json --task-id autogen__autogen-1174
+❌ Task autogen__autogen-1174 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/autogen-5124 --issue-file tmp_issue_autogen-5124.json --task-id autogen__autogen-5124
+❌ Task autogen__autogen-5124 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1532 --issue-file tmp_issue_crewAI-1532.json --task-id crewAI__crewAI-1532
+❌ Task crewAI__crewAI-1532 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1463 --issue-file tmp_issue_crewAI-1463.json --task-id crewAI__crewAI-1463
+❌ Task crewAI__crewAI-1463 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1370 --issue-file tmp_issue_crewAI-1370.json --task-id crewAI__crewAI-1370
+❌ Task crewAI__crewAI-1370 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1323 --issue-file tmp_issue_crewAI-1323.json --task-id crewAI__crewAI-1323
+❌ Task crewAI__crewAI-1323 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1270 --issue-file tmp_issue_crewAI-1270.json --task-id crewAI__crewAI-1270
+❌ Task crewAI__crewAI-1270 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1723 --issue-file tmp_issue_crewAI-1723.json --task-id crewAI__crewAI-1723
+❌ Task crewAI__crewAI-1723 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1753 --issue-file tmp_issue_crewAI-1753.json --task-id crewAI__crewAI-1753
+❌ Task crewAI__crewAI-1753 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1824 --issue-file tmp_issue_crewAI-1824.json --task-id crewAI__crewAI-1824
+❌ Task crewAI__crewAI-1824 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/crewAI-1934 --issue-file tmp_issue_crewAI-1934.json --task-id crewAI__crewAI-1934
+❌ Task crewAI__crewAI-1934 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/ChatDev-465 --issue-file tmp_issue_ChatDev-465.json --task-id ChatDev__ChatDev-465
+❌ Task ChatDev__ChatDev-465 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/ChatDev-318 --issue-file tmp_issue_ChatDev-318.json --task-id ChatDev__ChatDev-318
+❌ Task ChatDev__ChatDev-318 failed!
+▶ Running: PYTHONPATH=. python app/main.py local-issue --output-dir results/ --model claude-3-5-sonnet-20241022 --model-temperature 0.2 --local-repo repo/ChatDev-413 --issue-file tmp_issue_ChatDev-413.json --task-id ChatDev__ChatDev-413
+❌ Task ChatDev__ChatDev-413 failed!
+
+[2025-11-19 02:56:17] STDERR:
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/main.py", line 23, in <module>
+    from app import config, inference, log, result_analysis, task_counter
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/auto-code-rover/app/inference.py", line 11, in <module>
+    from natsort import natsorted
+ModuleNotFoundError: No module named 'natsort'
+
+[2025-11-19 02:56:17] ✓ Command succeeded
+[2025-11-19 02:56:17] ✓ AutoCodeRover (claude-3-5-sonnet-20241022) completed successfully
+[2025-11-19 02:56:17] 
+================================================================================
+[2025-11-19 02:56:17] BƯỚC 2C: CHẠY SWE-AGENT - claude-3-5-sonnet-20241022
+[2025-11-19 02:56:17] ================================================================================
+[2025-11-19 02:56:17] Lưu ý: SWE-agent có thể mất nhiều thời gian (vài giờ)
+[2025-11-19 02:56:17] Bạn có thể theo dõi tiến trình trong log file
+[2025-11-19 02:56:17] 
+>>> Executing: ./gen_patches_all.sh
+[2025-11-19 02:56:17] STDERR:
+/bin/sh: ./gen_patches_all.sh: Permission denied
+
+[2025-11-19 02:56:17] ✗ Command failed with return code 126
+[2025-11-19 02:56:17] ✗ SWE-agent (claude-3-5-sonnet-20241022) failed
+[2025-11-19 02:56:17] ✗ WARNING: SWE-agent failed for claude-3-5-sonnet-20241022
+[2025-11-19 02:56:17] 
+================================================================================
+[2025-11-19 02:56:17] BƯỚC 3: EVALUATE PATCHES
+[2025-11-19 02:56:17] ================================================================================
+[2025-11-19 02:56:17] Evaluating all generated patches...
+[2025-11-19 02:56:17] Lưu ý: Quá trình này có thể mất 1-2 giờ
+[2025-11-19 02:56:17] 
+>>> Executing: python /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/eval_patches.py
+[2025-11-19 02:56:17] STDERR:
+Traceback (most recent call last):
+  File "/Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/eval_patches.py", line 13, in <module>
+    for tag in os.listdir(PATCHES_ROOT):
+               ~~~~~~~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Patches'
+
+[2025-11-19 02:56:17] ✗ Command failed with return code 1
+[2025-11-19 02:56:17] ✗ Patch evaluation failed
+[2025-11-19 02:56:17] ✗ WARNING: Patch evaluation failed
+[2025-11-19 02:56:17] 
+================================================================================
+[2025-11-19 02:56:17] BƯỚC 4: PHÂN TÍCH KẾT QUẢ
+[2025-11-19 02:56:17] ================================================================================
+[2025-11-19 02:56:17] Analyzing benchmark results...
+[2025-11-19 02:56:17] 
+>>> Executing: python /Users/tranvanhuy/Desktop/Research/analyze_real_results.py
+[2025-11-19 02:56:17] STDOUT:
+================================================================================
+AGENTISSUE-BENCH - REAL RESULTS ANALYZER
+Phân tích kết quả thực tế từ patches đã generate
+================================================================================
+================================================================================
+REAL RESULTS ANALYZER INITIALIZED
+================================================================================
+Benchmark Directory: /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench
+Patches Directory: /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/Generated Patches
+Evaluation Log: /Users/tranvanhuy/Desktop/Research/AgentIssue-Bench/patch_eval.log
+Total Issues: 50
+================================================================================
+
+================================================================================
+STARTING REAL RESULTS ANALYSIS
+================================================================================
+
+>>> Counting patches per agent+model...
+  Analyzing: Agentless + gpt-4o
+  Analyzing: Agentless + claude
+  Analyzing: AutoCodeRover + gpt-4o
+  Analyzing: AutoCodeRover + claude
+  Analyzing: SWE-agent + gpt-4o
+  Analyzing: SWE-agent + claude
+
+>>> Calculating metrics...
+  Agentless + gpt-4o:
+    Coverage: 78.00% (39/50)
+    Total patches: 107
+    Avg patches/issue: 2.74
+  Agentless + claude:
+    Coverage: 82.00% (41/50)
+    Total patches: 123
+    Avg patches/issue: 3.00
+  AutoCodeRover + gpt-4o:
+    Coverage: 68.00% (34/50)
+    Total patches: 99
+    Avg patches/issue: 2.91
+  AutoCodeRover + claude:
+    Coverage: 62.00% (31/50)
+    Total patches: 81
+    Avg patches/issue: 2.61
+  SWE-agent + gpt-4o:
+    Coverage: 88.00% (44/50)
+    Total patches: 130
+    Avg patches/issue: 2.95
+  SWE-agent + claude:
+    Coverage: 78.00% (39/50)
+    Total patches: 114
+    Avg patches/issue: 2.92
+
+>>> Exporting results to CSV...
+  ✓ Created: /Users/tranvanhuy/Desktop/Research/real_benchmark_summary.csv
+  ✓ Created: /Users/tranvanhuy/Desktop/Research/real_benchmark_per_issue.csv
+  ✓ Created: /Users/tranvanhuy/Desktop/Research/real_benchmark_agent_comparison.csv
+  ✓ Created: /Users/tranvanhuy/Desktop/Research/real_benchmark_unresolved.csv
+
+================================================================================
+ALL CSV FILES EXPORTED SUCCESSFULLY
+================================================================================
+
+================================================================================
+BENCHMARK SUMMARY REPORT
+================================================================================
+
+📊 Overall Statistics:
+  Total patches generated: 654
+  Average coverage: 76.00%
+
+🏆 Best Performing Combinations:
+  Best coverage: SWE-agent + gpt-4o (88.00%)
+  Most patches: SWE-agent + gpt-4o (130 patches)
+
+⚠️  Unresolved Issues:
+  Total unresolved: 2/50
+  Issues: ai_4619, ai_6510
+
+================================================================================
+
+✓ ANALYSIS COMPLETE!
+✓ Results saved to: /Users/tranvanhuy/Desktop/Research
+
+[2025-11-19 02:56:17] ✓ Command succeeded
+[2025-11-19 02:56:17] ✓ Results analysis completed successfully
+[2025-11-19 02:56:17] ✓ CSV files have been generated
+[2025-11-19 02:56:17] 
+================================================================================
+[2025-11-19 02:56:17] HOÀN THÀNH BENCHMARK
+[2025-11-19 02:56:17] ================================================================================
+[2025-11-19 02:56:17] Thời gian kết thúc: 2025-11-19 02:56:17
+[2025-11-19 02:56:17] Tổng thời gian: 0h 5m
+[2025-11-19 02:56:17] Log file: /Users/tranvanhuy/Desktop/Research/benchmark_results/benchmark_run_20251119_025112.log
+[2025-11-19 02:56:17] ================================================================================
