@@ -1,0 +1,20 @@
+diff --git a/agixt/Chain.py b/agixt/Chain.py
+index 293e1c5..2177323 100644
+--- a/agixt/Chain.py
++++ b/agixt/Chain.py
+@@ -77,16 +77,17 @@ class Chain:
+                     and optionally a specific conversation's details.
+         """
+         try:
+-            # Initialize auth manager with provided token
+             user = await get_user_from_context(info)
++            auth_manager = magical.AuthManager()
+ 
+             if user is None:
+                 raise Exception("Authentication failed")
+ 
+             # Check if the user has access to the chain
+             if not await auth_manager.user_has_access_to_chain(user.id, self.id):
+                 raise Exception("User does not have access to this chain")
+ 
+             session = Session()    

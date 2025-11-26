@@ -1,0 +1,262 @@
+FLEXIBLE PATCH EVALUATION
+================================================================================
+
+[1/52] ===== Evaluating patches for tag: agixt_1026 =====
+Pulling docker image: alfin06/agentissue-bench:agixt_1026
+⚠️  Skipping tag agixt_1026 (image not available)
+
+[2/52] ===== Evaluating patches for tag: agixt_1030 =====
+Pulling docker image: alfin06/agentissue-bench:agixt_1030
+⚠️  Skipping tag agixt_1030 (image not available)
+
+[3/52] ===== Evaluating patches for tag: agixt_1253 =====
+Pulling docker image: alfin06/agentissue-bench:agixt_1253
+⚠️  Skipping tag agixt_1253 (image not available)
+
+[4/52] ===== Evaluating patches for tag: agixt_1256 =====
+Pulling docker image: alfin06/agentissue-bench:agixt_1256
+⚠️  Skipping tag agixt_1256 (image not available)
+
+[5/52] ===== Evaluating patches for tag: agixt_1369 =====
+Pulling docker image: alfin06/agentissue-bench:agixt_1369
+⚠️  Skipping tag agixt_1369 (image not available)
+
+[6/52] ===== Evaluating patches for tag: agixt_1371 =====
+Pulling docker image: alfin06/agentissue-bench:agixt_1371
+⚠️  Skipping tag agixt_1371 (image not available)
+
+[7/52] ===== Evaluating patches for tag: ai_4411 =====
+Pulling docker image: alfin06/agentissue-bench:ai_4411
+⚠️  Skipping tag ai_4411 (image not available)
+
+[8/52] ===== Evaluating patches for tag: ai_4412 =====
+Pulling docker image: alfin06/agentissue-bench:ai_4412
+⚠️  Skipping tag ai_4412 (image not available)
+
+[9/52] ===== Evaluating patches for tag: ai_5365 =====
+Pulling docker image: alfin06/agentissue-bench:ai_5365
+⚠️  Skipping tag ai_5365 (image not available)
+
+[10/52] ===== Evaluating patches for tag: ai_5628 =====
+Pulling docker image: alfin06/agentissue-bench:ai_5628
+⚠️  Skipping tag ai_5628 (image not available)
+
+[11/52] ===== Evaluating patches for tag: autogen_1174 =====
+Pulling docker image: alfin06/agentissue-bench:autogen_1174
+⚠️  Skipping tag autogen_1174 (image not available)
+
+[12/52] ===== Evaluating patches for tag: autogen_1844 =====
+Pulling docker image: alfin06/agentissue-bench:autogen_1844
+
+=== Testing patch: patch_2.patch ===
+❌ Patch patch_2.patch: FAILED
+
+=== Testing patch: patch_03_1.patch ===
+❌ Patch patch_03_1.patch: FAILED
+
+=== Testing patch: patch_02_1.patch ===
+❌ Patch patch_02_1.patch: FAILED
+
+=== Testing patch: patch_1.patch ===
+❌ Patch patch_1.patch: FAILED
+
+=== Testing patch: patch_3.patch ===
+❌ Patch patch_3.patch: FAILED
+
+=== Testing patch: patch_01_1.patch ===
+❌ Patch patch_01_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i1844_01.patch ===
+❌ Patch microsoft__autogen-i1844_01.patch: FAILED
+
+=== Testing patch: patch_01.patch ===
+❌ Patch patch_01.patch: FAILED
+
+=== Testing patch: patch_03.patch ===
+❌ Patch patch_03.patch: FAILED
+
+=== Testing patch: Patch01.patch ===
+❌ Patch Patch01.patch: FAILED
+
+=== Testing patch: patch_02.patch ===
+❌ Patch patch_02.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i1844_02.patch ===
+❌ Patch microsoft__autogen-i1844_02.patch: FAILED
+
+=== Patch Testing Summary for autogen_1844 ===
+Total patches tested: 12
+Successful patches: 0
+Failed patches: 12
+Plausible score: 0.00
+
+---------------------------------------------
+
+[13/52] ===== Evaluating patches for tag: autogen_3361 =====
+Pulling docker image: alfin06/agentissue-bench:autogen_3361
+
+=== Testing patch: patch_2.patch ===
+❌ Patch patch_2.patch: FAILED
+
+=== Testing patch: patch_03_1.patch ===
+❌ Patch patch_03_1.patch: FAILED
+
+=== Testing patch: patch_02_1.patch ===
+❌ Patch patch_02_1.patch: FAILED
+
+=== Testing patch: patch_1.patch ===
+❌ Patch patch_1.patch: FAILED
+
+=== Testing patch: patch_3.patch ===
+❌ Patch patch_3.patch: FAILED
+
+=== Testing patch: patch_01_1.patch ===
+❌ Patch patch_01_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i3361_01_1.patch ===
+❌ Patch microsoft__autogen-i3361_01_1.patch: FAILED
+
+=== Testing patch: patch_01.patch ===
+❌ Patch patch_01.patch: FAILED
+
+=== Testing patch: patch_03.patch ===
+❌ Patch patch_03.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i3361_02.patch ===
+❌ Patch microsoft__autogen-i3361_02.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i3361_02_1.patch ===
+❌ Patch microsoft__autogen-i3361_02_1.patch: FAILED
+
+=== Testing patch: patch_02.patch ===
+❌ Patch patch_02.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i3361_03.patch ===
+❌ Patch microsoft__autogen-i3361_03.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i3361_01.patch ===
+❌ Patch microsoft__autogen-i3361_01.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i3361_03_1.patch ===
+❌ Patch microsoft__autogen-i3361_03_1.patch: FAILED
+
+=== Patch Testing Summary for autogen_3361 ===
+Total patches tested: 15
+Successful patches: 0
+Failed patches: 15
+Plausible score: 0.00
+
+---------------------------------------------
+
+[14/52] ===== Evaluating patches for tag: autogen_4197 =====
+Pulling docker image: alfin06/agentissue-bench:autogen_4197
+
+=== Testing patch: patch_01_1.patch ===
+❌ Patch patch_01_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4197_03.patch ===
+❌ Patch microsoft__autogen-i4197_03.patch: FAILED
+
+=== Testing patch: patch_01.patch ===
+❌ Patch patch_01.patch: FAILED
+
+=== Testing patch: patch_03.patch ===
+❌ Patch patch_03.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4197_01.patch ===
+❌ Patch microsoft__autogen-i4197_01.patch: FAILED
+
+=== Testing patch: patch_02.patch ===
+❌ Patch patch_02.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4197_02.patch ===
+❌ Patch microsoft__autogen-i4197_02.patch: FAILED
+
+=== Patch Testing Summary for autogen_4197 ===
+Total patches tested: 7
+Successful patches: 0
+Failed patches: 7
+Plausible score: 0.00
+
+---------------------------------------------
+
+[15/52] ===== Evaluating patches for tag: autogen_4382 =====
+Pulling docker image: alfin06/agentissue-bench:autogen_4382
+⚠️  Skipping tag autogen_4382 (image not available)
+
+[16/52] ===== Evaluating patches for tag: autogen_4733 =====
+Pulling docker image: alfin06/agentissue-bench:autogen_4733
+
+=== Testing patch: patch_2.patch ===
+❌ Patch patch_2.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4733_01_1.patch ===
+❌ Patch microsoft__autogen-i4733_01_1.patch: FAILED
+
+=== Testing patch: patch_03_1.patch ===
+❌ Patch patch_03_1.patch: FAILED
+
+=== Testing patch: patch_02_1.patch ===
+❌ Patch patch_02_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4733_02_1.patch ===
+❌ Patch microsoft__autogen-i4733_02_1.patch: FAILED
+
+=== Testing patch: patch_1.patch ===
+❌ Patch patch_1.patch: FAILED
+
+=== Testing patch: patch_3.patch ===
+❌ Patch patch_3.patch: FAILED
+
+=== Testing patch: patch_01_1.patch ===
+❌ Patch patch_01_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4733_03_1.patch ===
+❌ Patch microsoft__autogen-i4733_03_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4733_02.patch ===
+❌ Patch microsoft__autogen-i4733_02.patch: FAILED
+
+=== Testing patch: patch_01.patch ===
+❌ Patch patch_01.patch: FAILED
+
+=== Testing patch: patch_03.patch ===
+❌ Patch patch_03.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4733_01.patch ===
+❌ Patch microsoft__autogen-i4733_01.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4733_03.patch ===
+❌ Patch microsoft__autogen-i4733_03.patch: FAILED
+
+=== Testing patch: patch_02.patch ===
+❌ Patch patch_02.patch: FAILED
+
+=== Patch Testing Summary for autogen_4733 ===
+Total patches tested: 15
+Successful patches: 0
+Failed patches: 15
+Plausible score: 0.00
+
+---------------------------------------------
+
+[17/52] ===== Evaluating patches for tag: autogen_4785 =====
+Pulling docker image: alfin06/agentissue-bench:autogen_4785
+
+=== Testing patch: patch_2.patch ===
+❌ Patch patch_2.patch: FAILED
+
+=== Testing patch: patch_03_1.patch ===
+❌ Patch patch_03_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4785_01_1.patch ===
+❌ Patch microsoft__autogen-i4785_01_1.patch: FAILED
+
+=== Testing patch: patch_02_1.patch ===
+❌ Patch patch_02_1.patch: FAILED
+
+=== Testing patch: patch_1.patch ===
+❌ Patch patch_1.patch: FAILED
+
+=== Testing patch: microsoft__autogen-i4785_02_1.patch ===
+❌ Patch microsoft__autogen-i4785_02_1.patch: FAILED

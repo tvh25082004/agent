@@ -1,0 +1,14 @@
+diff --git a/agixt/Chain.py b/agixt/Chain.py
+index 293e1c5..b291b8c 100644
+--- a/agixt/Chain.py
++++ b/agixt/Chain.py
+@@ -1406,8 +1406,8 @@ class Subscription:
+         and optionally a specific conversation's details.
+         """
+         try:
+-            # Initialize auth manager with provided token
+             user = await get_user_from_context(info)
++            auth_manager = magical
+ 
+             async def get_app_state():
+                 # Get user details
