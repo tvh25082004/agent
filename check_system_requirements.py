@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Kiểm tra xem máy có đủ điều kiện chạy đầy đủ eval như GitHub không
+Kiểm tra xem máy có đủ điều kiện chạy đầy đủ eval như GitHub 
 """
 
 import subprocess
