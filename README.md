@@ -109,3 +109,4 @@ export OPENAI_API_BASE="https://openrouter.ai/api/v1"
 ---
 
 **Lưu ý**: Script này chỉ đánh giá patches có sẵn, không gen patches mới.
+# agent
